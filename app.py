@@ -11,14 +11,14 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'password')
 
 
 ###
 # Routing for your application.
 ###
 
-@app.route('/')
+@app.route('/home/')
 def home():
     """Render website's home page."""
     return render_template('home.html')
@@ -34,7 +34,7 @@ def about():
 # The functions below should be applicable to all Flask apps.
 ###
 
-@app.route('/robots.txt')
+@app.route('/robots/')
 def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + 'robots.txt'
