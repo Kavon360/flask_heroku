@@ -34,10 +34,10 @@ def about():
 # The functions below should be applicable to all Flask apps.
 ###
 
-@app.route('/<file_name>.txt')
+@app.route('/robots.txt')
 def send_text_file(file_name):
     """Send your static text file."""
-    file_dot_text = file_name + '.txt'
+    file_dot_text = file_name + 'robots.txt'
     return app.send_static_file(file_dot_text)
 
 
@@ -59,4 +59,4 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0",port="8888")
+    app.run(debug=True,host="0.0.0.0",port=8080)
